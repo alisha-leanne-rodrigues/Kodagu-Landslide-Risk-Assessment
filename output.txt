@@ -1,0 +1,5 @@
+Geometry: Polygon
+Number of rings: 1
+Boundary points: 4743
+First point: [75.365438, 12.457823]
+Last point: [75.365438, 12.457823]

@@ -1,0 +1,62 @@
+column,group,description,unit,source
+sample_id,identity,Row id from source landslide table,,Kodagu_Landslide_Dataset
+label,target,"1 = landslide pixel (Aug-2018 inventory), 0 = non-landslide",0/1,Kodagu_Landslide_Dataset (Arpitha et al. 2024)
+pos_kind,identity,point = inventory point; polygon_pixel = pixel within mapped scar,,Kodagu_Landslide_Dataset
+scar_group,identity,Scar id; ALWAYS group by this when splitting,,Kodagu_Landslide_Dataset
+pix_in_scar,identity,Pixels in the scar,,Kodagu_Landslide_Dataset
+recommended_core,identity,"1 = recommended modelling subset (7,277 rows)",0/1,Kodagu_Landslide_Dataset
+suggested_split,identity,Spatial train/validation/test split (500 m buffer); extra_far_negative and buffer_dropped are not for scoring,,Kodagu_Landslide_Dataset
+fold,identity,5-km spatial block fold (0-4) for spatial CV,,Kodagu_Landslide_Dataset
+block_id,identity,5-km block id,,Kodagu_Landslide_Dataset
+neg_distance_band,identity,Distance band for sampled negatives,,Kodagu_Landslide_Dataset
+dist_to_landslide_m,identity,Do NOT use as a feature (label leakage),m,Kodagu_Landslide_Dataset
+sample_weight,identity,Weight: scars weigh equally; class totals balanced,,Kodagu_Landslide_Dataset
+elevation,terrain,DEM elevation,m,Kodagu_Landslide_Dataset
+slope,terrain,Slope,deg,Kodagu_Landslide_Dataset
+aspect_sin,terrain,sin(aspect); 0 where slope<2 deg,,Kodagu_Landslide_Dataset
+aspect_cos,terrain,cos(aspect); 0 where slope<2 deg,,Kodagu_Landslide_Dataset
+curv_plan,terrain,Plan curvature (x100),1/m,Kodagu_Landslide_Dataset
+curv_profile,terrain,Profile curvature (x100),1/m,Kodagu_Landslide_Dataset
+tpi_150m,terrain,"Topographic position index, 150 m window",m,Kodagu_Landslide_Dataset
+tpi_900m,terrain,"Topographic position index, 900 m window",m,Kodagu_Landslide_Dataset
+relief_330m,terrain,"Local relief, 330 m window",m,Kodagu_Landslide_Dataset
+dist_river_m,hydrology,Distance to nearest HydroRIVERS cell,m,Kodagu_Landslide_Dataset
+hand_m,hydrology,Height above nearest drainage,m,Kodagu_Landslide_Dataset
+landcover,landcover,ESA WorldCover 2021 class code,,Kodagu_Landslide_Dataset
+lc_10,landcover,One-hot: tree cover,,Kodagu_Landslide_Dataset
+lc_20,landcover,One-hot: shrubland,,Kodagu_Landslide_Dataset
+lc_30,landcover,One-hot: grassland,,Kodagu_Landslide_Dataset
+lc_40,landcover,One-hot: cropland,,Kodagu_Landslide_Dataset
+lc_50,landcover,One-hot: built-up,,Kodagu_Landslide_Dataset
+lc_60,landcover,One-hot: bare/sparse,,Kodagu_Landslide_Dataset
+lc_80,landcover,One-hot: water,,Kodagu_Landslide_Dataset
+lc_90,landcover,One-hot: wetland,,Kodagu_Landslide_Dataset
+soil_ph_0_5cm,soil,"Soil pH (water), 0-5 cm depth. SoilGrids 2.0 median, 250 m, converted to conventional units",pH,Kodagu_Soil_Data (ISRIC SoilGrids 2.0)
+soil_ph_5_15cm,soil,"Soil pH (water), 5-15 cm depth. SoilGrids 2.0 median, 250 m, converted to conventional units",pH,Kodagu_Soil_Data (ISRIC SoilGrids 2.0)
+soil_ph_15_30cm,soil,"Soil pH (water), 15-30 cm depth. SoilGrids 2.0 median, 250 m, converted to conventional units",pH,Kodagu_Soil_Data (ISRIC SoilGrids 2.0)
+soil_clay_pct_0_5cm,soil,"Clay content, 0-5 cm depth. SoilGrids 2.0 median, 250 m, converted to conventional units",%,Kodagu_Soil_Data (ISRIC SoilGrids 2.0)
+soil_clay_pct_5_15cm,soil,"Clay content, 5-15 cm depth. SoilGrids 2.0 median, 250 m, converted to conventional units",%,Kodagu_Soil_Data (ISRIC SoilGrids 2.0)
+soil_clay_pct_15_30cm,soil,"Clay content, 15-30 cm depth. SoilGrids 2.0 median, 250 m, converted to conventional units",%,Kodagu_Soil_Data (ISRIC SoilGrids 2.0)
+soil_sand_pct_0_5cm,soil,"Sand content, 0-5 cm depth. SoilGrids 2.0 median, 250 m, converted to conventional units",%,Kodagu_Soil_Data (ISRIC SoilGrids 2.0)
+soil_sand_pct_5_15cm,soil,"Sand content, 5-15 cm depth. SoilGrids 2.0 median, 250 m, converted to conventional units",%,Kodagu_Soil_Data (ISRIC SoilGrids 2.0)
+soil_sand_pct_15_30cm,soil,"Sand content, 15-30 cm depth. SoilGrids 2.0 median, 250 m, converted to conventional units",%,Kodagu_Soil_Data (ISRIC SoilGrids 2.0)
+soil_soc_g_kg_0_5cm,soil,"Soil organic carbon, 0-5 cm depth. SoilGrids 2.0 median, 250 m, converted to conventional units",g/kg,Kodagu_Soil_Data (ISRIC SoilGrids 2.0)
+soil_soc_g_kg_5_15cm,soil,"Soil organic carbon, 5-15 cm depth. SoilGrids 2.0 median, 250 m, converted to conventional units",g/kg,Kodagu_Soil_Data (ISRIC SoilGrids 2.0)
+soil_soc_g_kg_15_30cm,soil,"Soil organic carbon, 15-30 cm depth. SoilGrids 2.0 median, 250 m, converted to conventional units",g/kg,Kodagu_Soil_Data (ISRIC SoilGrids 2.0)
+road_dist_all_m,roads,Distance to nearest OSM road of any class (incl. tracks/paths),m,Kodagu_Roads_Data (OpenStreetMap)
+road_dist_motorable_m,roads,Distance to nearest motorable OSM road,m,Kodagu_Roads_Data (OpenStreetMap)
+road_density_all_km_km2,roads,"Road length per km2 in 1 km-radius circle, all classes",km/km2,Kodagu_Roads_Data (OpenStreetMap)
+road_density_motorable_km_km2,roads,"Road length per km2 in 1 km-radius circle, motorable only",km/km2,Kodagu_Roads_Data (OpenStreetMap)
+rain_monsoon_mean_mm,rainfall,IMD 0.25deg mean monsoon rainfall 2015-25 (location proxy; use at most one rain column),mm,Kodagu_Landslide_Dataset
+rain_annual_mean_mm,rainfall,IMD mean annual rainfall,mm,Kodagu_Landslide_Dataset
+rain_maxdaily_mm,rainfall,IMD mean annual max daily rainfall,mm,Kodagu_Landslide_Dataset
+rain_aug2018_mm,rainfall,IMD Aug-2018 total rainfall,mm,Kodagu_Landslide_Dataset
+rain_3day_max_aug2018_mm,rainfall,"IMD max 3-day rainfall, Aug-2018",mm,Kodagu_Landslide_Dataset
+soil_filled_nearest,qc,1 = soil values copied from nearest valid 250 m SoilGrids cell (max 750 m away),0/1,added during integration
+road_filled_from_vector,qc,1 = road features computed from vector roads because point lies outside raster footprint,0/1,added during integration
+row,location,Row in source 30 m grid - never train on,,Kodagu_Landslide_Dataset
+col,location,Col in source 30 m grid - never train on,,Kodagu_Landslide_Dataset
+x_lcc7755,location,"X, EPSG:7755 - never train on",m,Kodagu_Landslide_Dataset
+y_lcc7755,location,"Y, EPSG:7755 - never train on",m,Kodagu_Landslide_Dataset
+lon,location,Longitude WGS84 - never train on,deg,Kodagu_Landslide_Dataset
+lat,location,Latitude WGS84 - never train on,deg,Kodagu_Landslide_Dataset

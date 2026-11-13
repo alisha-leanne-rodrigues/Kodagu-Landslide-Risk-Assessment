@@ -1,0 +1,1 @@
+/home/alisha_rodrigues/LandslideProjectDataset/Environmental_Data/Rainfall/RF25_ind2025_rfp25.nc

@@ -1,0 +1,5 @@
+property,mapped_units_in_files,divide_by,conventional_units
+phh2o,pH x 10,10,pH (in water)
+clay,g/kg,10,g/100 g (%)
+sand,g/kg,10,g/100 g (%)
+soc,dg/kg,10,g/kg

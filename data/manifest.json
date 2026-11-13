@@ -1,0 +1,86 @@
+{
+ "created_utc": "2026-11-13T03:45:20",
+ "window_rc": [
+  3985,
+  7422,
+  2140,
+  5209
+ ],
+ "grid": {
+  "crs": "EPSG:7755",
+  "res_m": 30.0,
+  "origin_x": 3430068.978841963,
+  "origin_y": 2908526.76881167
+ },
+ "sources": {
+  "elevation": {
+   "file": "DEM_StudyArea_7755.tif",
+   "nodata": ">1e30",
+   "units": "m"
+  },
+  "slope": {
+   "file": "Slope_StudyArea_7755.tif",
+   "nodata": -9999,
+   "units": "degrees"
+  },
+  "dist_river_m": {
+   "file": "Distance_to_Rivers_StudyArea_7755.tif",
+   "units": "m",
+   "origin": "HydroRIVERS v1.0 (Asia)"
+  },
+  "hand_m": {
+   "derived_from": "DEM + River_Raster_7755.tif",
+   "units": "m",
+   "method": "elevation minus elevation of nearest river cell, clipped >= 0"
+  },
+  "landcover": {
+   "file": "WorldCover_2021_StudyArea_7755_aligned.tif",
+   "product": "ESA WorldCover 10 m 2021 v200",
+   "classes_used": [
+    10,
+    20,
+    30,
+    40,
+    50,
+    60,
+    80,
+    90
+   ]
+  },
+  "soil_ph_5_15cm": {
+   "file": "phh2o_5-15cm_Q0.5_IGH_250m.tif",
+   "units": "pH",
+   "native_res_m": 250,
+   "conversion": "raw / 10 (SoilGrids mapped units)"
+  },
+  "soil_clay_pct_5_15cm": {
+   "file": "clay_5-15cm_Q0.5_IGH_250m.tif",
+   "units": "%",
+   "native_res_m": 250,
+   "conversion": "raw / 10 (SoilGrids mapped units)"
+  },
+  "soil_sand_pct_5_15cm": {
+   "file": "sand_5-15cm_Q0.5_IGH_250m.tif",
+   "units": "%",
+   "native_res_m": 250,
+   "conversion": "raw / 10 (SoilGrids mapped units)"
+  },
+  "soil_soc_g_kg_5_15cm": {
+   "file": "soc_5-15cm_Q0.5_IGH_250m.tif",
+   "units": "g/kg",
+   "native_res_m": 250,
+   "conversion": "raw / 10 (SoilGrids mapped units)"
+  },
+  "rain_monsoon_mean_mm": {
+   "files": "IMD RF25 gridded daily rainfall 2015-2025",
+   "units": "mm (June-September total, mean over years)",
+   "native_res_deg": 0.25,
+   "interpolation": "bilinear"
+  }
+ },
+ "boundary": {
+  "file": "kodagu_boundary.geojson",
+  "area_km2": 4111.0,
+  "sha256_gpkg": "b9686ed45eabb05d17cf33374f731159d3834fededcf5c24897981f7ecd1208c"
+ }
+}

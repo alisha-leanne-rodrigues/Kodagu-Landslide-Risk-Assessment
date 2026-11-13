@@ -1,0 +1,13 @@
+file,property,depth,mapped_units,conversion_factor,conventional_units,rows,cols,pixel_size_m,valid_cells_in_district,min_raw,mean_raw,max_raw,min_conv,mean_conv,max_conv,nodata_value,dtype,method
+phh2o_0-5cm_Q0.5_IGH_250m.tif,phh2o,0-5cm,pH x 10,10,pH (in water),405,393,250.0,66843,51.0,55.15096569573478,65.0,5.1,5.515096569573478,6.5,-32768.0,Int16,gdal.Translate (osgeo)
+phh2o_5-15cm_Q0.5_IGH_250m.tif,phh2o,5-15cm,pH x 10,10,pH (in water),405,393,250.0,66843,51.0,54.99820474844037,65.0,5.1,5.499820474844038,6.5,-32768.0,Int16,gdal.Translate (osgeo)
+phh2o_15-30cm_Q0.5_IGH_250m.tif,phh2o,15-30cm,pH x 10,10,pH (in water),405,393,250.0,66843,51.0,54.942162978920756,65.0,5.1,5.494216297892075,6.5,-32768.0,Int16,gdal.Translate (osgeo)
+clay_0-5cm_Q0.5_IGH_250m.tif,clay,0-5cm,g/kg,10,g/100 g (%),405,393,250.0,66843,173.0,255.0903460347381,394.0,17.3,25.50903460347381,39.4,-32768.0,Int16,gdal.Translate (osgeo)
+clay_5-15cm_Q0.5_IGH_250m.tif,clay,5-15cm,g/kg,10,g/100 g (%),405,393,250.0,66843,168.0,256.89034005056624,370.0,16.8,25.689034005056623,37.0,-32768.0,Int16,gdal.Translate (osgeo)
+clay_15-30cm_Q0.5_IGH_250m.tif,clay,15-30cm,g/kg,10,g/100 g (%),405,393,250.0,66843,194.0,289.46675044507276,425.0,19.4,28.946675044507277,42.5,-32768.0,Int16,gdal.Translate (osgeo)
+sand_0-5cm_Q0.5_IGH_250m.tif,sand,0-5cm,g/kg,10,g/100 g (%),405,393,250.0,66843,290.0,416.7682031027931,587.0,29.0,41.67682031027931,58.7,-32768.0,Int16,gdal.Translate (osgeo)
+sand_5-15cm_Q0.5_IGH_250m.tif,sand,5-15cm,g/kg,10,g/100 g (%),405,393,250.0,66843,279.0,416.76790389419983,604.0,27.9,41.676790389419985,60.4,-32768.0,Int16,gdal.Translate (osgeo)
+sand_15-30cm_Q0.5_IGH_250m.tif,sand,15-30cm,g/kg,10,g/100 g (%),405,393,250.0,66843,261.0,382.60697455230917,588.0,26.1,38.26069745523092,58.8,-32768.0,Int16,gdal.Translate (osgeo)
+soc_0-5cm_Q0.5_IGH_250m.tif,soc,0-5cm,dg/kg,10,g/kg,405,393,250.0,66843,100.0,254.00501174393727,545.0,10.0,25.400501174393728,54.5,-32768.0,Int16,gdal.Translate (osgeo)
+soc_5-15cm_Q0.5_IGH_250m.tif,soc,5-15cm,dg/kg,10,g/kg,405,393,250.0,66843,74.0,235.1663450174289,480.0,7.4,23.516634501742892,48.0,-32768.0,Int16,gdal.Translate (osgeo)
+soc_15-30cm_Q0.5_IGH_250m.tif,soc,15-30cm,dg/kg,10,g/kg,405,393,250.0,66843,52.0,125.5690349026824,269.0,5.2,12.55690349026824,26.9,-32768.0,Int16,gdal.Translate (osgeo)

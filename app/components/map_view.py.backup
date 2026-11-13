@@ -1,0 +1,81 @@
+"""Interactive Leaflet map creation for Kodagu assessment."""
+
+import folium
+
+KODAGU_CENTER = [12.4244, 75.7382]
+DEFAULT_ZOOM = 10
+
+
+def get_map_center():
+    return KODAGU_CENTER.copy()
+
+
+def get_default_zoom():
+    return DEFAULT_ZOOM
+
+
+def create_base_map():
+    """Create the default interactive Kodagu map."""
+
+    return folium.Map(
+        location=get_map_center(),
+        zoom_start=get_default_zoom(),
+        tiles="OpenStreetMap",
+        control_scale=True,
+    )
+
+
+def add_location_marker(map_view, latitude, longitude):
+    """Add a selected location marker to the map."""
+
+    folium.Marker(
+        location=[latitude, longitude],
+        popup=(
+            f"Latitude: {latitude:.6f}<br>"
+            f"Longitude: {longitude:.6f}"
+        ),
+        tooltip="Selected Location",
+        icon=folium.Icon(
+            color="green",
+            icon="map-marker",
+        ),
+    ).add_to(map_view)
+
+    return map_view
+
+
+def add_polygon_drawing(map_view):
+    """Enable polygon drawing and editing on the map."""
+
+    from folium.plugins import Draw
+
+    Draw(
+        export=False,
+        position="topleft",
+        draw_options={
+            "polyline": False,
+            "rectangle": True,
+            "polygon": True,
+            "circle": False,
+            "circlemarker": False,
+            "marker": False,
+        },
+        edit_options={
+            "edit": True,
+            "remove": True,
+        },
+    ).add_to(map_view)
+
+    return map_view
+
+
+def display_map(map_view, height=550):
+    """Display a Folium map inside Streamlit."""
+
+    from streamlit_folium import st_folium
+
+    return st_folium(
+        map_view,
+        width=None,
+        height=height,
+    )

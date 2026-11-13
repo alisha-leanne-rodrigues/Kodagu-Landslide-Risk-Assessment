@@ -1,0 +1,75 @@
+"""Area-based landslide susceptibility assessment."""
+
+import streamlit as st
+
+from app.components.map_view import (
+    create_base_map,
+    add_polygon_drawing,
+    display_map,
+)
+
+
+def render_area_assessment():
+
+    st.title("Area Assessment")
+    st.caption(
+        "Select a geographical area to evaluate "
+        "landslide susceptibility."
+    )
+
+    st.write(
+        "Use the polygon or rectangle tool on the map "
+        "to select an area within Kodagu."
+    )
+
+    map_view = create_base_map()
+    map_view = add_polygon_drawing(map_view)
+
+    map_data = display_map(map_view, height=600)
+
+    st.divider()
+
+    st.subheader("Selected Area")
+
+    if map_data and map_data.get("all_drawings"):
+
+        drawings = map_data["all_drawings"]
+
+        st.success(
+            f"{len(drawings)} area shape(s) drawn successfully."
+        )
+
+        for index, drawing in enumerate(drawings, start=1):
+
+            geometry = drawing.get("geometry", {})
+            coordinates = geometry.get("coordinates", [])
+
+            st.markdown(f"**Area {index}**")
+
+            st.json({
+                "geometry_type": geometry.get("type"),
+                "coordinates": coordinates,
+            })
+
+        st.session_state["selected_areas"] = drawings
+
+        st.info(
+            "Area selected successfully. "
+            "Susceptibility analysis will be connected next."
+        )
+
+    else:
+        st.info(
+            "No area selected yet. Draw a polygon or rectangle "
+            "using the tools on the map."
+        )
+
+    st.divider()
+
+    st.subheader("Area Susceptibility Results")
+
+    st.write(
+        "Area-level predictions, susceptibility distribution "
+        "and SHAP explanations will appear here after "
+        "model integration."
+    )

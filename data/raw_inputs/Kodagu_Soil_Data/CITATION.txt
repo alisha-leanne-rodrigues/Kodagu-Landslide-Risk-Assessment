@@ -1,0 +1,6 @@
+Poggio, L., de Sousa, L. M., Batjes, N. H., Heuvelink, G. B. M., Kempen, B., Ribeiro, E., and
+Rossiter, D.: SoilGrids 2.0: producing soil information for the globe with quantified spatial uncertainty,
+SOIL, 7, 217-240, 2021. https://doi.org/10.5194/soil-7-217-2021
+
+Data: ISRIC - World Soil Information, https://files.isric.org/soilgrids/latest/data/
+Data policy / licence: https://www.isric.org/about/data-policy  (please confirm the current licence terms there)

@@ -1,0 +1,61 @@
+{
+  "dataset": "Kodagu soil (SoilGrids 2.0)",
+  "script_version": "1.0",
+  "created_utc": "2026-11-12T05:36:18",
+  "source": "https://files.isric.org/soilgrids/latest/data/",
+  "documentation": "https://docs.isric.org/globaldata/soilgrids/webdav_from_Python.html",
+  "statistic": "median (Q0.5)",
+  "properties": [
+    "phh2o",
+    "clay",
+    "sand",
+    "soc"
+  ],
+  "depths": [
+    "0-5cm",
+    "5-15cm",
+    "15-30cm"
+  ],
+  "native_resolution_m": 250,
+  "crs": "Interrupted Goode Homolosine (+proj=igh +datum=WGS84), as served",
+  "resampling": "none (pixel-window crop of the remote VRT)",
+  "values": "integers in mapped units",
+  "boundary": {
+    "source": "OpenStreetMap administrative boundary via OSMnx geocode_to_gdf (Nominatim)",
+    "query": "Kodagu, Karnataka, India",
+    "which_result": 1,
+    "display_name": "Coorg, Karnataka, India",
+    "osm_type": "relation",
+    "osm_id": "2020511",
+    "osm_class_type": "boundary/administrative",
+    "detail": "area 4104 km2, centroid (12.325 N, 75.801 E)"
+  },
+  "files": [
+    "phh2o_0-5cm_Q0.5_IGH_250m.tif",
+    "phh2o_5-15cm_Q0.5_IGH_250m.tif",
+    "phh2o_15-30cm_Q0.5_IGH_250m.tif",
+    "clay_0-5cm_Q0.5_IGH_250m.tif",
+    "clay_5-15cm_Q0.5_IGH_250m.tif",
+    "clay_15-30cm_Q0.5_IGH_250m.tif",
+    "sand_0-5cm_Q0.5_IGH_250m.tif",
+    "sand_5-15cm_Q0.5_IGH_250m.tif",
+    "sand_15-30cm_Q0.5_IGH_250m.tif",
+    "soc_0-5cm_Q0.5_IGH_250m.tif",
+    "soc_5-15cm_Q0.5_IGH_250m.tif",
+    "soc_15-30cm_Q0.5_IGH_250m.tif"
+  ],
+  "failures": [],
+  "gdal_method": "gdal.Translate (osgeo)",
+  "tests": [
+    {
+      "name": "Kodagu boundary download",
+      "status": "PASS",
+      "detail": "area 4104 km2, centroid (12.325 N, 75.801 E)"
+    },
+    {
+      "name": "SoilGrids VRT open + read test",
+      "status": "PASS",
+      "detail": "VRT opened (Int16, 159246x58034 px, native pixel 250 m); 8x8 test block over Kodagu: 64/64 valid, values 54..56"
+    }
+  ]
+}
